@@ -47,7 +47,40 @@ public class Main {
             System.out.println(palindromeTest+"  is not Palindrome" );
         }
 
+//        Reverse a string without reverse()
 
+        String reverse="iamback";
+
+        String reverseString=reverseString(reverse);
+
+        System.out.println(reverseString);
+
+    }
+
+    public static String reverseString(String s){
+        if (s==null || s.isEmpty()){
+            return null;
+        }
+
+        if (s.length()<=1){
+            return s;
+        }
+
+        char[] arr=s.toCharArray();
+        int left=0;
+        int right=s.length()-1;
+
+        while (left<right){
+            char temp=arr[right];
+            arr[right]=arr[left];
+            arr[left]=temp;
+
+            right--;
+            left++;
+
+        }
+
+        return new String(arr);
     }
 
     public static boolean palindrome(String s){
