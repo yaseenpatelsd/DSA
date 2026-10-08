@@ -34,6 +34,48 @@ public class Main {
 
         System.out.println(Arrays.toString(arr));
 
+
+//        Check if a string is a palindrome
+
+        String palindromeTest="mom";
+
+        boolean palindrome=palindrome(palindromeTest);
+
+        if (palindrome){
+            System.out.println(palindromeTest +" is Palindrome" );
+        }else {
+            System.out.println(palindromeTest+"  is not Palindrome" );
+        }
+
+
+    }
+
+    public static boolean palindrome(String s){
+
+        if ( s==null || s.isEmpty() ){
+            return false;
+        }
+
+        if(s.length()<=1){
+            return false;
+        }
+
+        int left=0;
+        int right=s.length()-1;
+
+
+        while (left<right){
+            if (s.charAt(left)!=s.charAt(right)){
+                return false;
+            }
+
+            left++;
+            right--;
+        }
+
+        return true;
+
+
     }
 
     public static boolean Istrue(String s ,String p) {
