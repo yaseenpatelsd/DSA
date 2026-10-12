@@ -99,6 +99,50 @@ public class Main {
             System.out.println(palendromeCheck+"  is not Palindrome" );
         }
 
+//      max and min
+
+        int[] maxMinFinder={1,2,3,4,5,6,7,8,9,10};
+
+        System.out.println(Arrays.toString(maxMinFinder));
+        int max=maxFinder(maxMinFinder);
+
+        System.out.println(" max of array is  "+max);
+
+        int min=minFinder(maxMinFinder);
+
+        System.out.println(" min of array is "+min);
+
+
+    }
+
+    public static int minFinder(int[] arr){
+        if (arr.length<=0){
+            return 0;
+        }
+        int min=Integer.MAX_VALUE;
+
+        for (int i = 0; i <arr.length; i++) {
+            if (min>arr[i]){
+                min=arr[i];
+            }
+        }
+
+        return min;
+    }
+
+    public static int maxFinder(int[] arr){
+        if (arr.length<=0){
+            return 0;
+        }
+        int max=Integer.MIN_VALUE;
+
+        for (int i = 0; i <arr.length; i++) {
+            if (max<arr[i]){
+                max=arr[i];
+            }
+        }
+
+        return max;
     }
 
     public static boolean palindromeCheck(String s){
